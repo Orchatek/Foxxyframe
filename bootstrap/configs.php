@@ -1,7 +1,5 @@
 <?php
 
-use Bramus\Router\Router;
-use Rakit\Validation\Validator;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -15,6 +13,13 @@ if (!defined("APP_PATH")) {
  * ================+
  */
 const APP_NAME = 'Kwestion Framework';
+const APP_DETAILS = [
+    'APP_NAME' => APP_NAME,
+    'APP_ADDRESS' => 'Address of the company',
+    'APP_EMAIL' => 'email@info.com',
+    'APP_PHONE' => 'Phone Number',
+];
+
 define("APP_URL", get_server_url());
 
 // custom flash messages
@@ -41,12 +46,7 @@ $twig = new Environment($twigLoader, [
     'debug' => true,
 ]);
 
-/**
- * ================+
- * System Validation Configurations
- * ================+
- */
-
-// validator
-$validator = new Validator();
-
+$twig->addFunction(new \Twig\TwigFunction('site_url', 'site_url'));
+$twig->addFunction(new \Twig\TwigFunction('config', static function ($value) {
+    return APP_DETAILS[$value];
+}));

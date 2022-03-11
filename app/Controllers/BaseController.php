@@ -20,6 +20,6 @@ abstract class BaseController
     public function __construct()
     {
         $this->twig = $GLOBALS['twig'];
-        $this->validator = $GLOBALS['validator'];
+        $this->validator =  new Validator();
     }
 }
