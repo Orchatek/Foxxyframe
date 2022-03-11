@@ -1,6 +1,8 @@
+{{ flash() | raw }}
+
 <form method="POST" action="/send" id="contact-form"
       novalidate="novalidate">
-    <input type="hidden" name="_method" value="POST">
+    {{ csrf_field() | raw }}
     <div class="row clearfix">
         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
             <input type="text" name="username" placeholder="Your Name" required=""

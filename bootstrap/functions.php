@@ -61,6 +61,7 @@ function verify_csrf_token()
     if (!$token || !hash_equals($token, $_SESSION['token'])) {
         // return 405 http status code
         header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+        echo "Error occured code 11x4";
         exit;
     }
 

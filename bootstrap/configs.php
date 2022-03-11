@@ -2,6 +2,7 @@
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twig\TwigFunction;
 
 if (!defined("APP_PATH")) {
     die("No direct call allowed");
@@ -46,7 +47,9 @@ $twig = new Environment($twigLoader, [
     'debug' => true,
 ]);
 
-$twig->addFunction(new \Twig\TwigFunction('site_url', 'site_url'));
-$twig->addFunction(new \Twig\TwigFunction('config', static function ($value) {
+$twig->addFunction(new TwigFunction('site_url', 'site_url'));
+$twig->addFunction(new TwigFunction('csrf_field', 'get_csrf_field'));
+$twig->addFunction(new TwigFunction('flash', 'flash'));
+$twig->addFunction(new TwigFunction('config', static function ($value) {
     return APP_DETAILS[$value];
 }));
