@@ -13,11 +13,11 @@ if (!defined("APP_PATH")) {
  * System Configurations
  * ================+
  */
-const APP_NAME = 'Kwestion Framework';
+const APP_NAME = 'AssetsRepo';
 const APP_DETAILS = [
     'APP_NAME' => APP_NAME,
     'APP_ADDRESS' => 'Address of the company',
-    'APP_EMAIL' => 'email@info.com',
+    'APP_EMAIL' => 'info@assetsrepo.com',
     'APP_PHONE' => 'Phone Number',
 ];
 
