@@ -226,11 +226,16 @@ function flash(string $name = '', string $message = '', string $type = ''): void
  * get the current server with port number
  * @return string
  */
-function get_server_url(): string
+function get_server_url($name = "", $portNumber = ""): string
 {
     $protocol = (!empty($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) === 'on' || $_SERVER['HTTPS'] === '1')) ? 'https://' : 'http://';
-    $server = $_SERVER['SERVER_NAME'];
-    $port = $_SERVER['SERVER_PORT'] ? ':' . $_SERVER['SERVER_PORT'] : '';
+    $server = $name ?? $_SERVER['SERVER_NAME'];
+    if (empty($portNumber)) {
+        $port = !empty($_SERVER['SERVER_PORT']) ? sprintf(":%s", $_SERVER['SERVER_PORT']) : "";
+    } else {
+        $port = ":" . $portNumber;
+    }
+
     return $protocol . $server . $port;
 }
 

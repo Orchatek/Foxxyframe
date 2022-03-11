@@ -20,7 +20,7 @@ const APP_DETAILS = [
     'APP_PHONE' => 'Phone Number',
 ];
 
-define("APP_URL", get_server_url());
+define("APP_URL", get_server_url('localhost','8081'));
 
 // custom flash messages
 const FLASH = 'FLASH_MESSAGES';
