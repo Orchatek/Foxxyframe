@@ -11,10 +11,7 @@ if (!defined("APP_PATH")) {
  */
 router()->get('/', 'App\Controllers\WelcomeController@__invoke');
 
-// contact
-router()->get('contact', 'App\Controllers\ContactController@index');
-router()->post('contact', 'App\Controllers\ContactController@store');
-router()->post('send', 'App\Controllers\ContactController@store');
+// add more routes here
 
 /**
  * ================+

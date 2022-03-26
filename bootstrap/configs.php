@@ -13,7 +13,7 @@ if (!defined("APP_PATH")) {
  * System Configurations
  * ================+
  */
-const APP_NAME = 'AssetsRepo';
+const APP_NAME = 'FoxxyFrame';
 const APP_DETAILS = [
     'APP_NAME' => APP_NAME,
     'APP_ADDRESS' => 'Address of the company',
@@ -21,7 +21,7 @@ const APP_DETAILS = [
     'APP_PHONE' => 'Phone Number',
 ];
 
-define("APP_URL", get_server_url('localhost','8081'));
+define("APP_URL", get_server_url());
 
 // custom flash messages
 const FLASH = 'FLASH_MESSAGES';

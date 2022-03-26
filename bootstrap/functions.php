@@ -19,7 +19,7 @@ if (!defined("APP_PATH")) {
  */
 function site_url(string $url = "/"): string
 {
-    return rtrim(APP_URL, "/") . "/" . rtrim($url, "/");
+    return rtrim(APP_URL, "/") . "/" . rtrim(ltrim($url, "/"), "/");
 }
 
 /**
@@ -225,12 +225,14 @@ function flash(string $name = '', string $message = '', string $type = ''): void
 
 /**
  * get the current server with port number
+ * @param string $name
+ * @param string $portNumber
  * @return string
  */
-function get_server_url($name = "", $portNumber = ""): string
+function get_server_url(string $name = "", string $portNumber = ""): string
 {
     $protocol = (!empty($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS']) === 'on' || $_SERVER['HTTPS'] === '1')) ? 'https://' : 'http://';
-    $server = $name ?? $_SERVER['SERVER_NAME'];
+    $server = !empty($name) ? $name : $_SERVER['SERVER_NAME'];
     if (empty($portNumber)) {
         $port = !empty($_SERVER['SERVER_PORT']) ? sprintf(":%s", $_SERVER['SERVER_PORT']) : "";
     } else {
