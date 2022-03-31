@@ -2,7 +2,8 @@
   "require": {
     "twig/twig": "^3.0",
     "rakit/validation": "^1.4",
-    "bramus/router": "^1.6"
+    "bramus/router": "^1.6",
+    "eftec/bladeone": "^4.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
