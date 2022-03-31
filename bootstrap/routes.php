@@ -20,5 +20,5 @@ router()->get('/', 'App\Controllers\WelcomeController@__invoke');
  */
 router()->set404(function () {
     header('HTTP/1.1 404 Not Found');
-    echo $GLOBALS['twig']->render('404.twig');
+    echo "Page not found";
 });

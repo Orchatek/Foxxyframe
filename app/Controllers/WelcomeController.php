@@ -5,12 +5,10 @@ namespace App\Controllers;
 class WelcomeController extends BaseController
 {
     /**
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     * @throws \Twig\Error\LoaderError
+     * @throws \Exception
      */
     public function __invoke()
     {
-        echo $this->twig->render('index.twig');
+        echo $this->blade->run('index');
     }
 }
