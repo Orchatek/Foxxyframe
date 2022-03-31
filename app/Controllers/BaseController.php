@@ -21,12 +21,12 @@ abstract class BaseController
     /**
      * @var BladeOne
      */
-    protected BladeOne $view;
+    protected BladeOne $blade;
 
     public function __construct()
     {
         $this->twig = $GLOBALS['twig'];
-        $this->view = $this->viewEngine();
+        $this->blade = $this->viewEngine();
         $this->validator = new Validator();
     }
 
